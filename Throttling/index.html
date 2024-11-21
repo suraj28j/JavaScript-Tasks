@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        section {
+            width: 500px;
+            height: 1000px;
+        }
+        section h2:first-child {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+
+<body onscroll="showCount()">
+    <section>
+        <h2 class="n_count">Normal Count : </h2>
+        <h2 class="t_count">Throttling Count : </h2>
+    </section>
+</body>
+
+<script>
+    let nCount = 0;
+    let tCount = 0;
+    let isScrolling = true;
+
+    let n_count = document.querySelector(".n_count");
+    let t_count = document.querySelector(".t_count");
+
+    throttlingCountFunction = () => {
+        if (isScrolling === true) {
+            t_count.innerText = `Throttling Count : ${tCount++}`
+            isScrolling = false;
+            setTimeout(() => {
+                isScrolling = true;
+            }, 1000);
+        }
+    }
+
+    const showCount = () => {
+        n_count.innerText = `Normal Count : ${nCount++}`;
+        throttlingCountFunction();
+    }
+</script>
+
+</html>
