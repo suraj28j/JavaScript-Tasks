@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width: 40rem;
+            border: 1px solid;
+            padding-left: 1rem;
+            margin: 5px 0px;
+        }
+        span{
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h2>Truncate</h2>
+        <p id="para1"></p>
+    </section>
+
+    <section>
+        <h2>Truncate</h2>
+        <p id="para2"></p>
+    </section>
+
+    <script>
+        let str = `In Javascript we can truncate a string using the slice() method and substr() method. The slice() function returns a 
+                    new string that contains a portion of the original string, and pass starting index and ending at the specified index.`
+
+        const truncate = (str, num) => {
+            return str.length > num ? str.slice(0, num) + "..." : str;
+        }
+
+        // Example 1
+        let para1 = document.querySelector("#para1");
+        para1.innerText = truncate(str, 25);
+
+        // Example 2
+        let para2 = document.querySelector("#para2");
+        para2.innerHTML = `${truncate(str, 25)} <span>Read more</span>`;
+        let span = document.querySelector('span');
+        span.addEventListener('click',()=>{
+            para2.innerHTML = `${truncate(str, str.length)}`;
+        })
+    </script>
+</body>
+
+</html>
