@@ -1,54 +1,38 @@
-const users = document.querySelector('.user-list');
-const userName = document.querySelector("#user"); 
+const users = document.querySelector('.users');
+let data;
 
-const userArr = [];
-
-const getUserData = async() => {
+const getData = async () => {
     try {
-
-        const res = await fetch('https://api.github.com/users');
-        const data = await res.json();
-        // console.log(data);
-
-        if(data){
-            users.innerHTML = ""
-        }
-
-        data.map((user) => {
-            const li = document.createElement('li');
-
-            userArr.push(li);
-
-            li.insertAdjacentHTML('afterbegin', 
-                `
-                <div class="user-data">
-                    <img src=${user.avatar_url} alt=${user.avatar_url} srcset="">
-                    <div>
-                        <p>${user.login}</p>
-                        <a href=${user.html_url} target="_blank">${user.html_url}</a>
-                    </div>
-                 </div>
-                `
-            )
-
-            users.appendChild(li);
-
+        const res = await fetch(`https://api.github.com/users`);
+        data = await res.json();
+        users.innerHTML = '';
+        data.forEach((item) => {
+            const div = document.createElement('div');
+            div.setAttribute("id", "card")
+            div.innerHTML = `
+            <img src = "${item.avatar_url}" alt = ${item.login}/>
+            <div>
+                <h2>${item.login}</h2>
+                <p><a href = "${item.html_url}">${item.html_url}</a></p>
+            </div>
+            `
+            users.appendChild(div);
         })
-        
+        // console.log(result);
     } catch (error) {
         console.log(error);
     }
 }
 
-userName.addEventListener('input', (e) => {
-    const val = e.target.value;
-    console.log(val);
+getData();
 
-    userArr.filter((curElem) => {
-       curElem.innerText.toLowerCase().includes(val.toLowerCase()) ?
-        curElem.classList.remove('hide') :
-        curElem.classList.add('hide')
+
+const input = document.querySelector("input");
+input.addEventListener('input', (e) => {
+    let inputData = e.target.value
+    // console.log(inputData);
+    data = data.filter((item) => {
+        return item.login === inputData
     })
+    getData();
 })
-
-getUserData();
