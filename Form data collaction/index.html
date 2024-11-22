@@ -10,48 +10,35 @@
 
 <body>
     <form>
-        <fieldset>
-            <table>
-                <legend>Web Development</legend>
-
-                <tr>
-                    <th><label for="name">Name : </label></th>
-                    <td> <input type="text" id="name"></td>
-                </tr>
-
-                <tr>
-                    <th><label for="email">Email : </label></th>
-                    <td><input type="email" id="email"></td>
-                </tr>
-
-                <tr>
-                    <th><label for="phone">Phone No. :</label></th>
-                    <td><input type="text" id="phone"></td>
-                </tr>
-
-
-                <tr>
-                    <th><label>Join Date : </label></th>
-                    <td><input type="date" id="date"></td>
-                </tr>
-
-                <tr>
-                    <th><label for="course">Course :</label></th>
-                    <td>
-                        <select id="course">
-                            <option>Java</option>
-                            <option>Python</option>
-                            <option>MERN</option>
-                            <option>MEAN</option>
-                            <option>UX/UI</option>
-                        </select>
-                    </td>
-                </tr>
-
-            </table>
-
-        </fieldset>
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="date" id="date"><br>
+        <select id="course">
+            <option>Java</option>
+            <option>Python</option>
+            <option>MERN</option>
+            <option>MEAN</option>
+            <option>UX/UI</option>
+        </select>
     </form>
+
+    <!-- Inline JS -->
+    <!-- <form>
+        <input type="text" id="name" placeholder="Full Name" oninput="getInfo(this)"><br>
+        <input type="email" id="email" placeholder="Email" oninput="getInfo(this)"><br>
+        <input type="text" id="phone" placeholder="Phone Number" oninput="getInfo(this)"><br>
+        <input type="date" id="date" oninput="getInfo(this)"><br>
+        <select id="course" oninput="getInfo(this)">
+            <option>Java</option>
+            <option>Python</option>
+            <option>MERN</option>
+            <option>MEAN</option>
+            <option>UX/UI</option>
+        </select>
+    </form> -->
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
