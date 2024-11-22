@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 30rem;
+    margin-top: 1rem;
+}
+form input,select{
+    padding: 0.4rem 2rem;
+}
+
+table tr{
+    margin: 2rem 0.4rem;
+    border: 1px solid;
+}
+
+table th {
+    text-align: left;
+}
