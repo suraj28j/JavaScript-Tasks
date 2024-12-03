@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.slide-container {
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+}
+
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    color: white;
+    font-size: 2rem;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev {
+    left: 20px;
+}
