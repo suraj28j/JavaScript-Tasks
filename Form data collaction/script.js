@@ -1,3 +1,21 @@
+// Method 1
+
+// let form = document.querySelector('form');
+// form.addEventListener('submit',(e)=>{
+//     e.preventDefault();
+//     let name = e.target.name.value;
+//     let email = e.target.email.value;
+//     let phone = e.target.phone.value;
+//     let date = e.target.date.value;
+//     let course = e.target.course.value;
+
+//     console.log(name, email, phone, date, course);
+// })
+
+
+
+// Method 2
+
 let userInfo = {
     name: undefined,
     email: undefined,
@@ -17,7 +35,8 @@ let input = document.querySelectorAll('input'); // NodeList
 })
 
 
-// Inline JS
+
+// Method 3 (Inline JS)
 
 // function getInfo(element) {
 //     userInfo[element.id] = element.value;
