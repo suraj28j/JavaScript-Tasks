@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="successMesssage">Login Successful</div>
+    <div class="container">
+        <h2>Login</h2>
+        <form>
+            <input type="email" id="email" placeholder="Email">
+            <p id="emailErr"></p>
+            <input type="password" id="password" placeholder="Password">
+            <p id="passwordErr"></p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        let info = JSON.parse(sessionStorage.getItem('info'));
+        let emailErr = document.querySelector("#emailErr");
+        let passwordErr = document.querySelector("#passwordErr");
+        let successMesssage = document.querySelector("#successMesssage");
+        let form = document.querySelector('form');
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let email = e.target.email.value;
+            let password = e.target.password.value;
+
+            if (email === info.email && password === info.password) {
+                successMesssage.style.visibility = 'visible';
+            } else {
+                emailErr.innerText = "Incorrect Email";
+                passwordErr.innerText = "Incorrect Passoword";
+            }
+        })
+
+    </script>
+</body>
+
+</html>

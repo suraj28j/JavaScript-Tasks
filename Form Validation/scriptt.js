@@ -2,6 +2,7 @@ let usernameErr = document.querySelector("#usernameErr");
 let emailErr = document.querySelector("#emailErr");
 let phoneErr = document.querySelector("#phoneErr");
 let passwordErr = document.querySelector("#passwordErr");
+let cpasswordErr = document.querySelector("#cpasswordErr");
 let form = document.querySelector("form");
 
 form.addEventListener('submit', (e) => {
@@ -11,6 +12,9 @@ form.addEventListener('submit', (e) => {
     let email = e.target.email.value;
     let phone = e.target.phone.value;
     let password = e.target.password.value;
+    let cpassword = e.target.cpassword.value;
+
+    let isValid = true;
 
     // Function for checking validation
     function checkUsername() {
@@ -36,7 +40,8 @@ form.addEventListener('submit', (e) => {
         usernameErr.style.visibility = 'hidden';
     } else {
         usernameErr.innerText = "Invalid Name";
-        usernameErr.style.visibility = 'visible'
+        usernameErr.style.visibility = 'visible';
+        isValid = false;
     }
 
     if (checkEmail()) {
@@ -44,7 +49,8 @@ form.addEventListener('submit', (e) => {
         emailErr.style.visibility = 'hidden';
     } else {
         emailErr.innerText = "Invalid Email";
-        emailErr.style.visibility = 'visible'
+        emailErr.style.visibility = 'visible';
+        isValid = false;
     }
 
     if (checkPhone()) {
@@ -52,7 +58,8 @@ form.addEventListener('submit', (e) => {
         phoneErr.style.visibility = 'hidden';
     } else {
         phoneErr.innerText = "Invalid Phone Number";
-        phoneErr.style.visibility = 'visible'
+        phoneErr.style.visibility = 'visible';
+        isValid = false;
     }
 
     if (checkPassword()) {
@@ -60,7 +67,32 @@ form.addEventListener('submit', (e) => {
         passwordErr.style.visibility = 'hidden';
     } else {
         passwordErr.innerText = "Invalid Password";
-        passwordErr.style.visibility = 'visible'
+        passwordErr.style.visibility = 'visible';
+        isValid = false;
+    }
+
+    if (password === cpassword) {
+        console.log(cpassword);
+        cpasswordErr.style.visibility = 'hidden';
+    } else {
+        cpasswordErr.innerText = "Password Mismatch";
+        cpasswordErr.style.visibility = 'visible';
+        isValid = false;
+    }
+
+    if (isValid) {
+        let credentials = {
+            username,
+            email,
+            phone,
+            password
+        }
+        let successMesssage = document.querySelector("#successMesssage");
+        sessionStorage.setItem("info",JSON.stringify(credentials));
+        successMesssage.style.visibility = 'visible';
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 2000);
     }
 
 })
