@@ -42,6 +42,7 @@ function isPalindromeWord(str) {
 // ------------------------------------------------------------------------------------------- //
 
 // [3] Prime Number //
+// Example :- 2,3,5,7,11,13,17,19,23 .....
 
 // Method : (1) //
 function isPrimeNumber(num) {
@@ -76,8 +77,8 @@ function isPrime(num) {
 
 // ------------------------------------------------------------------------------------------- //
 
-//  [4] Fibonacci sequence //
-
+//  [4] Fibonacci Sequence //
+// Example :- [0,1,1,2,3,5,8....]
 function fibonacci(term) {
     if (term <= 0)
         return [];
@@ -94,8 +95,21 @@ function fibonacci(term) {
         let nextNum = sequence[sequence.length-1]+sequence[sequence.length-2];
         sequence.push(nextNum);
     }
-
+    
     return sequence;
 }
+// console.log(fibonacci(5));
 
-console.log(fibonacci(5));
+// ------------------------------------------------------------------------------------------- //
+
+// [5] Factorial 
+function factorial(num){
+    if(num<=1){
+        return 1;
+    }else{
+        return num*factorial(num-1);
+    }
+}
+console.log(factorial(5));
+
+// ------------------------------------------------------------------------------------------- //
