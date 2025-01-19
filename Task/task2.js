@@ -44,7 +44,48 @@ function toTitleCase(str) {
     let pattern = /\b\w/g;
     return str.replace(pattern, l => l.toUpperCase());
 }
-console.log(toTitleCase("my name is suraj"));
+// console.log(toTitleCase("my name is suraj"));
 
 
+// [6] Find longest word in string and return first longest word in reverse order
 
+function largeWord(str) {
+    let ary = str.split(" ")
+    let temp = ary[0];
+    for (let i = 0; i < ary.length; i++) {
+        if (temp.length < ary[i].length) {
+            temp = ary[i]
+        }
+    }
+    return temp.split("").reverse().join("");
+}
+// console.log(largeWord("My name is suraj kumar"));
+
+
+// [7] function take two string as argument if one string all letter is includ in second string return true otherwise return false
+// Example :-  love,lvetyo => true | lion,ionrt => false
+
+function letterMatch(str1, str2) {
+    if (str1.length > str2.length) {
+        let t = str1;
+        str1 = str2;
+        str2 = t;
+    }
+    let ary1 = str1.split("");
+    let ary2 = str2.split("");
+    let temp = []
+    for (let i = 0; i < ary1.length; i++) {
+        for (let j = 0; j < ary2.length; j++) {
+            if (ary1[i] === ary2[j]) {
+                temp.push(ary1[i]);
+            }
+        }
+    }
+    if (str1 === temp.join("")) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(letterMatch("ovler", "love"));
