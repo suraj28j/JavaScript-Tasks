@@ -29,7 +29,9 @@ function isPalindromeNumber(num) {
 
 // ------------------------------------------------------------------------------------------- //
 
-// [2] Palindrome Number //
+// [2] Palindrome String //
+
+// Method [1] //
 function isPalindromeWord(str) {
     if (str === String(str.split("").reverse().join(""))) {
         console.log("It's a palindrome word");
@@ -38,6 +40,15 @@ function isPalindromeWord(str) {
     }
 }
 // isPalindromeWord("madam")
+
+// Method [2] //
+function isPalindrome(str) {
+    let normalizedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    // console.log(normalizedStr);
+    return normalizedStr === normalizedStr.split(" ").reverse().join("");
+}
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("It's not a palindrome word"));
 
 // ------------------------------------------------------------------------------------------- //
 
@@ -91,11 +102,11 @@ function fibonacci(term) {
     //     sequence.push(temp);
     // }
 
-    while(sequence.length<term){
-        let nextNum = sequence[sequence.length-1]+sequence[sequence.length-2];
+    while (sequence.length < term) {
+        let nextNum = sequence[sequence.length - 1] + sequence[sequence.length - 2];
         sequence.push(nextNum);
     }
-    
+
     return sequence;
 }
 // console.log(fibonacci(5));
@@ -103,13 +114,13 @@ function fibonacci(term) {
 // ------------------------------------------------------------------------------------------- //
 
 // [5] Factorial 
-function factorial(num){
-    if(num<=1){
+function factorial(num) {
+    if (num <= 1) {
         return 1;
-    }else{
-        return num*factorial(num-1);
+    } else {
+        return num * factorial(num - 1);
     }
 }
-console.log(factorial(5));
+// console.log(factorial(5));
 
 // ------------------------------------------------------------------------------------------- //
