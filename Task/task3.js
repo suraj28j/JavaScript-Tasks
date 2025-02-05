@@ -516,5 +516,20 @@ Kumar
 
 
 // [58] //
+// var magic = 900;
+// function magic(){
+//     console.log("magic");
+// }
+// console.log(magic); // 900
+
+
+// [59] //
+console.log(1);
+
+new Promise(function(res){
+    console.log(2);
+})
+
+console.log(3);
 
 
