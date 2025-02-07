@@ -524,12 +524,22 @@ Kumar
 
 
 // [59] //
-console.log(1);
+// console.log(1);
 
-new Promise(function(res){
-    console.log(2);
-})
+// new Promise(function(res){
+//     console.log(2);
+// })
+// console.log(3);
 
-console.log(3);
+
+// [60] //
+// const arr = [,,,];
+// console.log(arr.length); // 3
+// console.log(arr); // [ <3 empty items> ]
 
 
+// [61] //
+// let x = 10;
+// let y = "A";
+// [x,y] = [y,x];
+// console.log({x,y});
