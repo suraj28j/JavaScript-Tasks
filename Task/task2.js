@@ -41,9 +41,19 @@ function largeNumNestedArray(ary) {
 // [5] Write a JavaScript program to convert a string to title case (capitalize the first letter of each word).
 
 function toTitleCase(str) {
-    let pattern = /\b\w/g;
-    return str.replace(pattern, l => l.toUpperCase());
+    let ary = str.split(" ");
+    let temp = []
+    for (let i = 0; i < ary.length; i++) {
+        temp.push(ary[i].replace(/^[a-z]/g,(x)=>x.toUpperCase()))
+    }
+    return temp.join(" ");
 }
+
+// function toTitleCase(str) {
+//     let pattern = /\b\w/g;
+//     return str.replace(pattern, l => l.toUpperCase());
+// }
+
 // console.log(toTitleCase("my name is suraj"));
 
 
