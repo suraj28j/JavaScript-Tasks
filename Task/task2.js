@@ -123,4 +123,23 @@ function fizzBuzz(){
 fizzBuzz()
 
 // [9] Write a function that takes an array of objects and a key, and ...
-// returns a new array sorted based on the values of that key in ascending order. 
+// returns a new array sorted based on the values of that key in ascending order.
+
+
+// [10] Count Occurrences of Words in an Array
+function countWords(arr) {
+    let modifyAry = arr.filter((val, ind) => arr.indexOf(val) === ind);
+    let fruits = [];
+    let obj = {}
+    for (let i = 0; i < modifyAry.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (modifyAry[i] === arr[j + i]) {
+                fruits.push(modifyAry[i]);
+            }
+        }
+        obj[`${modifyAry[i]}`] = fruits.length;
+        fruits = [];
+    }
+    return obj
+}
+console.log(countWords(["apple", "banana", "apple", "orange", "banana", "banana"])); // { apple: 2, banana: 3, orange: 1 }
