@@ -7,7 +7,7 @@
 // }
 
 Array.prototype.customForEach = function (callback, context) {
-    
+
     if (typeof callback !== 'function')
         throw `${callback} is not a function`
 
@@ -30,7 +30,7 @@ Array.prototype.customForEach = function (callback, context) {
 
 // customFilter //
 
-Array.prototype.customFilter = function(callback,context){
+Array.prototype.customFilter = function (callback, context) {
     if (typeof callback !== 'function')
         throw `${callback} is not a function`
 
@@ -38,8 +38,8 @@ Array.prototype.customFilter = function(callback,context){
     let i = 0
     while (i < this.length) {
         if (this.hasOwnProperty) {
-           if(callback.call(context, this[i], i, this))
-            result.push(this[i])
+            if (callback.call(context, this[i], i, this))
+                result.push(this[i])
         }
         i++;
     }
@@ -55,3 +55,42 @@ Array.prototype.customFilter = function(callback,context){
 
 
 // ---------------------------------------------------------------------- //
+
+// customReducer //
+Array.prototype.customReducer = function (callback, intitalValue) {
+    let sum = intitalValue || 0;
+
+    if (typeof callback !== 'function')
+        throw `${callback} is not a function`;
+
+    for (let i = 0; i < this.length; i++) {
+        sum = callback(sum, this[i])
+    }
+    return sum;
+}
+
+// let nums = [1, 2, 3, 4, 5]
+// let res = nums.customReducer((acc, curr) => acc + curr, 0);
+// console.log(res);
+
+
+// ---------------------------------------------------------------------- //
+
+// customMap //
+
+Array.prototype.customMap = function(callback){
+    if(typeof callback !=='function')
+        throw `${callback} is not a function`
+    
+    let result = [];
+    for(let i=0;i<this.length;i++){
+        result.push(callback(this[i],i,this))
+    }   
+    return result;
+}
+
+let nums = [2,4,6,8,9];
+let res = nums.customMap((val,ind,ary)=>{
+    return val+1;
+})
+console.log(res);
