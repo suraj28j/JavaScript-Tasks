@@ -2,28 +2,28 @@ let products = [
     {
         id: 101,
         productName: "Samsung Galaxy A16",
-        price: "15,499",
+        price: "₹ 15,499",
         rating: 3.2,
         src:"./images/A16.png"
     },
     {
         id: 102,
         productName: "Samsung Galaxy S24",
-        price: "59,999",
+        price: "₹ 59,999",
         rating: 3.6,
         src:"./images/S24 5G.webp"
     },
     {
         id: 103,
         productName: "Samsung Galaxy M15",
-        price: "11999",
+        price: "₹ 11999",
         rating: 3.9,
         src:"./images/S24.webp"
     },
     {
         id: 104,
         productName: "Samsung Galaxy S25",
-        price: "80,999",
+        price: "₹ 80,999",
         rating: 4.1,
         src:"./images/S25.webp"
     }
@@ -37,19 +37,20 @@ function display() {
         let item = document.createElement('div');
         item.setAttribute("class", "item");
 
+        // Product Image
         const img = document.createElement('img');
         img.src = product.src;
         img.setAttribute('alt',`${product.productName}`);
-
+        
+        // Product Title 
         const h2 = document.createElement('h2');
         h2.innerText = product.productName;
 
-        const info = document.createElement('div');
-        info.setAttribute('class','info');
+        // Product Price
         const h3 = document.createElement('h3');
         h3.innerText = product.price;
 
-        // ---- for Product rating ----- //
+        // ---- Product Rating ----- //
         const p = document.createElement('p');
         for (let j = 0; j < 5; j++) {
             if (product.rating > 0.5) {
@@ -72,12 +73,10 @@ function display() {
         }
         // ------x------x------- //
 
-        info.appendChild(h3);
-        info.appendChild(p);
-
         item.appendChild(img);
         item.appendChild(h2);
-        item.appendChild(info);
+        item.appendChild(h3)
+        item.appendChild(p)
 
         productsContainer.appendChild(item)
     })
