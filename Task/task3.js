@@ -543,3 +543,14 @@ Kumar
 // let y = "A";
 // [x,y] = [y,x];
 // console.log({x,y});
+
+
+// [62] //
+// var a = [typeof a,typeof b];
+// console.log(a);
+
+
+// [63] //
+const [x, ...y] = [1,2,3,4];
+console.log({x,y});
+

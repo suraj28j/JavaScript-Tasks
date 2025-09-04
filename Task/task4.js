@@ -55,18 +55,18 @@ const elementSum = (nums) => {
 // console.log(secondLarge(input2));
 
 // [4] missing odd number
-let input = [5, 7, 9, 11, 15, 17];
+// let input = [5, 7, 9, 11, 15, 17];
 
-const missingOddNum = (nums) => {
-    let res;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] + 2 !== nums[i + 1]) {
-            res = nums[i] + 2;
-            break;
-        }
-    }
-    return res;
-}
+// const missingOddNum = (nums) => {
+//     let res;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] + 2 !== nums[i + 1]) {
+//             res = nums[i] + 2;
+//             break;
+//         }
+//     }
+//     return res;
+// }
 // console.log(missingOddNum(input));
 
 // [5] reverse the string word by word
@@ -132,3 +132,20 @@ const missingOddNum = (nums) => {
 
 // // countRepetedWord(str,"this")
 // countRepetedWord(str,"is")
+
+// [8]
+// output numbers only
+let ary = ['3',3,null,'o',8];
+let res = ary.filter((num)=>{
+    return typeof num === 'number';
+})
+// console.log(res); // [3,8];
+
+
+// [9]
+// what is output
+let a = 5;
+let b = 10;
+[a,b] = [b,a];
+console.log(a);
+console.log(b);
