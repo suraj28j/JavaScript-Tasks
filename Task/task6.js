@@ -307,6 +307,21 @@ const divideNum = (num, div) => {
 // Input: 5, 2
 // Output: addition: 7, subtraction: 3
 
+const addAndSub = (num1,num2) => {
+    let n1 = num1;
+    let n2 = num2;
+    while(n2>0){
+        n1++;
+        n2--;
+    }
+    while(num2>0){
+        num1--;
+        num2--
+    }
+    return `addition: ${n1}, subtraction: ${num1}`
+}
+console.log(addAndSub(12,5));
+
 
 // ------------------------------------------------------------------------------------------------- //
 
@@ -404,10 +419,10 @@ const isPerfectNumber = (num) => {
 // Input: num1 = 2, num2 = 13
 // Output: num1 = 13, num2 = 2
 
-const swapNumber = (num1,num2) => {
-    num1 = num1+num2;
-    num2 = num1-num2;
-    num1 = num1-num2;
+const swapNumber = (num1, num2) => {
+    num1 = num1 + num2;
+    num2 = num1 - num2;
+    num1 = num1 - num2;
     return `num1 = ${num1} num2 = ${num2}`
 }
 // console.log(swapNumber(5,10));
@@ -434,6 +449,15 @@ const swapNumber = (num1,num2) => {
 // Input: Suraj
 // Output: r
 
+const middleString = (str) => {
+    const ary = str.split("")
+    if (ary.length % 2 === 0)
+        return `${ary[ary.length / 2 - 1]}${ary[ary.length / 2]}`
+    else
+        return ary[(ary.length + 1) / 2 - 1]
+}
+// console.log(middleString("Python"));
+
 
 // ------------------------------------------------------------------------------------------------- //
 
@@ -445,6 +469,16 @@ const swapNumber = (num1,num2) => {
 // Input: 55
 // Output: 110111
 
+const decimalToBinary = (num) => {
+    let res = [];
+    while (num > 0) {
+        res.unshift(num % 2);
+        num = parseInt(num / 2);
+    }
+    return res.join("")
+}
+// console.log(decimalToBinary(10));
+
 
 // ------------------------------------------------------------------------------------------------- //
 
@@ -455,3 +489,13 @@ const swapNumber = (num1,num2) => {
 // Example (2):
 // Input: "string"
 // Output: "The given string does not contain a number"
+
+const isContainNumber = (str) => {
+    let ary = str.split("")
+    for (let i in ary) {
+        if (!(isNaN(ary[i]++)))
+            return "The given string contain a number"
+    }
+    return "The given string does not contain a number"
+}
+// console.log(isContainNumber("num2er"));
