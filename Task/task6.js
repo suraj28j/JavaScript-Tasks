@@ -307,20 +307,20 @@ const divideNum = (num, div) => {
 // Input: 5, 2
 // Output: addition: 7, subtraction: 3
 
-const addAndSub = (num1,num2) => {
+const addAndSub = (num1, num2) => {
     let n1 = num1;
     let n2 = num2;
-    while(n2>0){
+    while (n2 > 0) {
         n1++;
         n2--;
     }
-    while(num2>0){
+    while (num2 > 0) {
         num1--;
         num2--
     }
     return `addition: ${n1}, subtraction: ${num1}`
 }
-console.log(addAndSub(12,5));
+// console.log(addAndSub(12,5));
 
 
 // ------------------------------------------------------------------------------------------------- //
@@ -499,3 +499,273 @@ const isContainNumber = (str) => {
     return "The given string does not contain a number"
 }
 // console.log(isContainNumber("num2er"));
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [26]  Convert the string into integer, without using the build-in int() function
+// Example (1):
+// Input: "123"
+// Output: : 123
+// Example (2):
+// Input: "456"
+// Output: 456
+
+const strToInt = (str) => {
+    console.log(str++);
+}
+// strToInt("123")
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [27]  In a cricket match the bating team is scoring runs with some run rate. The match is for 20 over. 
+// Write a program to find the total runs scored by the batting
+// Example (1):
+// Input: 13
+// Output: Total runs scored in 20 overs: 260.00
+// Example (2):
+// Input: 15
+// Output: Total runs scored in 20 overs: 300.00
+
+const finalScore = (runRate) => {
+    return runRate * 20;
+}
+// console.log(finalScore(13));
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [28]  A bus conductor his ticket machine is printing numbers in revers order due to technical glitch.
+// As programer on the bus, you are asked to help him by creating a program to display the numbers correctly 
+// Example (1):
+// Input: 320
+// Output: Number is revers order: 23
+// Example (2):
+// Input: Number is revers order: 123
+// Output: 321
+
+// const reversNumber = (num) => {
+//     let ary = num.toString().split("")
+//     ary = ary.filter((n)=>n!=='0');
+//     return Number(ary.reverse().join("")); 
+// }
+
+// 2nd Method 
+const reversNumber = (num) => {
+    let res = 0;
+    while (num > 0) {
+        res = 10 * res + (num % 10)
+        num = parseInt(num / 10);
+    }
+    return res
+}
+// console.log(reversNumber(123));
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [29] Implement the ternary operator without using conditional statments
+// Example (1):
+// Input: a=5,b=15
+// Output: 15 is greater
+// Example (2):
+// Input: a=20,b=10
+// Output: 20 is greater
+
+const greaterNumber = (a, b) => {
+    return a > b ? a : b;
+}
+// console.log(greaterNumber(5,15));
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [30] write a function to check if two strings are anagrams without using built-in methods or sorthing  
+// Example (1):
+// Input: str1 = "listen", str2 = "silent"
+// Output: true
+// Example (2):
+// Input: str1 = "hello", str2 = "world"
+// Output: false
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [31] write a program to print numbers from 1 to 100 without using any numbers in the code 
+
+const printWithoutNums = () => {
+    let isNum = true;
+    while(isNum<=100){
+        console.log(isNum++);
+    }
+}
+// printWithoutNums();
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [32] Implement a function to calculate "base" raised to "exponent" without using built-in power function or operators
+// Example (1):
+// Input: base = 2, exponent = 3
+// Output: 8
+// Example (2):
+// Input: base = 5, exponent = 0
+// Output: 1
+
+const exponentNum = (base,exponent) => {
+    let temp = 1;
+    while(exponent>0){
+        temp = base*temp;
+        exponent--;
+    }
+    return temp
+}
+// console.log(exponentNum(5,0));
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [33] Give an odd length word which should be printed from the middle of the word
+// Example (1):
+// Input: PROGRAM
+// Output:
+/*
+                G
+               GR
+              GRA   
+             GRAM
+            GRAMP
+           GRAMPR
+          GRAMPRO
+*/
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [34]  Give 'n pairs of parenthese without a function to generate all combination of well-formed parentheses
+// Example (1):
+// Input: n= 3
+// Output: ["((()))", "(())()", "()(())", "()()()"];
+// Example (2):
+// Input: 1
+// Output: ["()"];
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [35] Write a program to give the following output for the given input
+// Example (1):
+// Input: a1b5
+// Output: aabbbbb
+// Example (2):
+// Input: a2b3c4d6
+// Output: aabbbccccdddddd
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [36]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [37]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [38]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [39]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [40]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [41]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [42]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [43]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [44]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output:
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [45]
+// Example (1):
+// Input:
+// Output:
+// Example (2):
+// Input:
+// Output: 
