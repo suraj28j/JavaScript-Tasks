@@ -663,109 +663,138 @@ const exponentNum = (base,exponent) => {
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [36]
+// [36] Remove unbalance parentheses in a given expression 
 // Example (1):
-// Input:
+// Input: ((abc)((de))
+// Output: ((abc)(de))
+// Example (2):
+// Input: (a(b)))(c(d))
+// Output: (a(b))(cd)
+// Example (3):
+// Input: (((ab)
+// Output: (ab)
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [37] Given an integer N, the task is to convert the given number into words
+// Example (1):
+// Input: N = 438237764
+// Output: Four Hundred Thirty-Eight Million Two Hundred Thirty-Seven Thousand
+// Example (2):
+// Input: 1000
+// Output: One Thousand
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [38] To output the given string for the given input which is an integer
+// Example (1):
+// Input: 1
+// Output: A
+// Example (2): 
+// Input: 26 
+// Output: Z
+// Example (3): 
+// Input: 27
+// Output: AA
+// Example (4): 
+// Input: 1000 
+// Output: ALL
+
+
+// ------------------------------------------------------------------------------------------------- //
+
+// [39] Write a program to print the following for the given input. You can assume the string is of odd length 
+// Example (1):
+// Input: Welcomezohocorporations
 // Output:
 // Example (2):
-// Input:
+// Input: 12345
 // Output:
 
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [37]
+// [40] Given an Integer, the task is to write a program to convert integer to roman
 // Example (1):
-// Input:
-// Output:
+// Input: 3758
+// Output: "MMMDCCXLIX"
 // Example (2):
-// Input:
-// Output:
+// Input: 58
+// Output: "LVIII"
 
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [38]
+// [41] Write a program to convert a number into a mono-digit number
+/*
+Conditions:
+a) You are allowed to add and subtract the consecutive digits (starting to left) 
+b) You are allowed to do only one operation on a digit.
+c) You can't perform any operation on a resultant digit of the previous operation 
+d) Your code should also find if a given number can't be converted to a mono-digit number
+*/
 // Example (1):
-// Input:
-// Output:
+// Input: 72581
+/* 
+Output: 7(2+5)81
+        77(8-1)
+        777
+*/
 // Example (2):
-// Input:
-// Output:
+// Input: 3962
+// Output: con't create a mono digit number
 
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [39]
-// Example (1):
-// Input:
+// [42] Your are given an number n,
+// Example :
+// Input: if n=4, you have to print the following pattern
 // Output:
-// Example (2):
-// Input:
-// Output:
+/*
+    4444
+    4334
+    4334
+    4444
+*/
+
 
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [40]
-// Example (1):
-// Input:
+// [43] Write a program to print all permutations of a string
+// Example :
+// Input: ABC
 // Output:
-// Example (2):
-// Input:
-// Output:
+/*
+    A
+    B C
+    AB AC BA BC CA CB
+    ABC ACB BCA BAC CBA CAB
+*/
 
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [41]
-// Example (1):
-// Input:
+// [44] Write a program to print below the pattern 
+// Example :
+// Input: N = 3
 // Output:
-// Example (2):
-// Input:
-// Output:
+/*
+    7 8 9
+    6 1 2
+    5 4 3
+*/
 
 
 // ------------------------------------------------------------------------------------------------- //
 
-// [42]
+// [45] Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target 
 // Example (1):
-// Input:
-// Output:
+// Input: [3,2,4], target = 6
+// Output: [1,2]
 // Example (2):
-// Input:
-// Output:
-
-
-// ------------------------------------------------------------------------------------------------- //
-
-// [43]
-// Example (1):
-// Input:
-// Output:
-// Example (2):
-// Input:
-// Output:
-
-
-// ------------------------------------------------------------------------------------------------- //
-
-// [44]
-// Example (1):
-// Input:
-// Output:
-// Example (2):
-// Input:
-// Output:
-
-
-// ------------------------------------------------------------------------------------------------- //
-
-// [45]
-// Example (1):
-// Input:
-// Output:
-// Example (2):
-// Input:
-// Output: 
+// Input: [3,3], target = 6
+// Output:  [0,1]
