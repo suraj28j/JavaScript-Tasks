@@ -708,10 +708,10 @@ const exponentNum = (base,exponent) => {
 // [39] Write a program to print the following for the given input. You can assume the string is of odd length 
 // Example (1):
 // Input: Welcomezohocorporations
-// Output:
+// Output: https://drive.google.com/file/d/1TnL3S85fobEwRf_XNFmy0OjXKsT7zh9x/view?usp=sharing
 // Example (2):
 // Input: 12345
-// Output:
+// Output: https://drive.google.com/file/d/1TnL3S85fobEwRf_XNFmy0OjXKsT7zh9x/view?usp=sharing
 
 
 // ------------------------------------------------------------------------------------------------- //
